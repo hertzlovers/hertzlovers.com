@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import logo from "./hertzlovers-logo.svg";
-  import hertzlovers from "./hertzlovers.svg";
 
   let open = false;
   let openD = false;
@@ -99,19 +98,5 @@
         </div>
       </div>
     </nav>
-  </div>
-</div>
-
-<div
-  class="bg-red-400 flex justify-start flex-col items-center py-20 space-y-10"
->
-  <img
-    src={hertzlovers}
-    width="300"
-    alt="HertzLovers - Open Source acoustics"
-  />
-  <div class="text-center space-y-2 font-sans">
-    <h1>Build your own</h1>
-    <h2 class="underline">acoustic panels</h2>
   </div>
 </div>

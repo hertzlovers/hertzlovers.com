@@ -1,59 +1,27 @@
 <script context="module" lang="ts">
-	export const prerender = true;
+  export const prerender = true;
 </script>
 
 <script lang="ts">
-	import Counter from '$lib/Counter/index.svelte';
+  import hertzlovers from "./hertzlovers.svg";
 </script>
 
 <svelte:head>
-	<title>Home</title>
+  <title>HertzLovers - Open Source Acoustics</title>
 </svelte:head>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp">
-				<img src="svelte-welcome.png" alt="Welcome"/>
-			</picture>
-		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+<section
+  class="bg-red-400 flex justify-start flex-col items-center py-20 space-y-10"
+>
+  <img
+    src={hertzlovers}
+    width="300"
+    alt="HertzLovers - Open Source acoustics"
+  />
+  <div class="text-center space-y-2 font-sans">
+    <h1>Build your own</h1>
+    <h2 class="underline">acoustic panels</h2>
+  </div>
 </section>
 
-<style style lang="postcss">
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<section class="h-40 bg-blue-100" />
