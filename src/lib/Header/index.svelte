@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import Dropdown from "./dropdown.svelte";
+
   import logo from "./hertzlovers-logo.svg";
+  import MenuItem from "./menu-item.svelte";
 
   let open = false;
-  let openD = false;
 </script>
 
 <div class="w-full text-gray-700">
@@ -12,7 +13,7 @@
   >
     <div class="p-4 flex flex-row items-center justify-between">
       <a
-        href="#"
+        href="/"
         class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline"
       >
         <img src={logo} alt="HertzLovers" class="h-12" /></a
@@ -42,61 +43,13 @@
       class:hidden={!open}
       class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
     >
-      <a
-        class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-        href="#">Home</a
-      >
-      <a
-        class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-        href="#">FAQ</a
-      >
-      <a
-        class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-        href="#">Acoustic Tips</a
-      >
-      <a
-        class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-        href="#">Wikifactory</a
-      >
-      <div class="relative">
-        <button
-          on:click={() => (openD = !openD)}
-          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-        >
-          <span>Dropdown</span>
-          <svg
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            class:rotate-180={openD}
-            class:rotate-0={!openD}
-            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
-            ><path
-              fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            /></svg
-          >
-        </button>
-        <div
-          class:hidden={!openD}
-          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
-        >
-          <div class="px-2 py-2 bg-white rounded-md shadow ">
-            <a
-              class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-              href="#">Link #1</a
-            >
-            <a
-              class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-              href="#">Link #2</a
-            >
-            <a
-              class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-              href="#">Link #3</a
-            >
-          </div>
-        </div>
-      </div>
+      <MenuItem label="Home" href="/" />
+      <Dropdown />
+      <MenuItem label="FAQ" href="/faq" />
+      <MenuItem
+        label="Wikifactory"
+        href="https://wikifactory.com/+hertzlovers"
+      />
     </nav>
   </div>
 </div>
