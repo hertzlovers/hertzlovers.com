@@ -4,8 +4,6 @@
 
 <script lang="ts">
   import hertzlovers from "./hertzlovers.svg";
-  import Mdx from "./example-markdown.md";
-  import Example from "$lib/Example.svx";
 </script>
 
 <svelte:head>
@@ -27,6 +25,3 @@
 </section>
 
 <section class="h-40 bg-blue-100" />
-
-<Mdx />
-<Example />
